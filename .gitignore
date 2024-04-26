@@ -39,6 +39,7 @@ build/
 .DS_Store
 
 ###
-solutions
+solutions/message-broken-agnostic-solution
+solutions/spring-security-rbac-rational-db-solution
 samples/sample-sunset
 supports/cache-support

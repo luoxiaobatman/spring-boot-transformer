@@ -22,6 +22,7 @@
         <module>samples</module>
         <module>supports</module>
         <module>nodeps</module>
+        <module>solutions</module>
     </modules>
 
 </project>

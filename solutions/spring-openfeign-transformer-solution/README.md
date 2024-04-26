@@ -1,0 +1,1 @@
+openfeign rpc solution for spring boot project.

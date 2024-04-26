@@ -1,0 +1,1 @@
+an end to end, directly used solution target a specific domain with specific tech.

@@ -5,29 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>me.luoxiao.transformer</groupId>
-        <artifactId>nodeps</artifactId>
+        <artifactId>parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>nodep</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>solutions</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
+    <modules>
+        <module>spring-openfeign-transformer-solution</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-    </dependencies>
 <!--    <build>-->
 <!--        <plugins>-->
 <!--            <plugin>-->
