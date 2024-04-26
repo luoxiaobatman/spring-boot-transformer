@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-parent</artifactId>
+        <version>3.2.4</version>
+        <relativePath/>
+    </parent>
+    <groupId>me.luoxiao.transformer</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>parent</name>
+    <packaging>pom</packaging>
+    <description>Parent pom for all transformer projects.</description>
+
+    <properties>
+        <!--        工程参数 START-->
+        <mybatis-spring.version>3.0.3</mybatis-spring.version>
+        <revision>1.0.0-SNAPSHOT</revision>
+        <!--        工程参数 END-->
+
+        <!--        构建相关 START-->
+        <java.version>21</java.version>
+        <resource.delimiter>@</resource.delimiter>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--        构建相关 END-->
+
+        <!--        依赖版本管理 START-->
+        <mybatis-plus.version>3.5.6</mybatis-plus.version>
+        <guava.version>33.1.0-jre</guava.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <commons-net.version>3.10.0</commons-net.version>
+        <antlr4.version>4.13.1</antlr4.version>
+        <simplemagic.version>1.17</simplemagic.version>
+        <poi-ooxml.version>5.2.5</poi-ooxml.version>
+        <poi.version>5.2.5</poi.version>
+        <zip4j.version>2.11.5</zip4j.version>
+        <ipaddress.version>5.5.0</ipaddress.version>
+        <mapstruct.version>1.6.0.Beta1</mapstruct.version>
+        <modelmapper.version>3.2.0</modelmapper.version>
+        <pinyin4j.version>2.5.1</pinyin4j.version>
+        <dynamic-datasource-spring-boot3-starter.version>4.3.0</dynamic-datasource-spring-boot3-starter.version>
+        <poi-tl.version>1.12.1</poi-tl.version>
+        <redisson-spring-boot-starter.version>3.27.2</redisson-spring-boot-starter.version>
+        <jjwt.version>0.12.5</jjwt.version>
+        <JsoupXpath.version>2.5.3</JsoupXpath.version>
+        <tika.version>2.9.1</tika.version>
+        <hyperscan.version>5.4.0-2.0.0</hyperscan.version>
+        <sshd.version>2.12.1</sshd.version>
+        <easyexcel.version>3.3.4</easyexcel.version>
+        <clickhouse-bom.version>0.5.0</clickhouse-bom.version>
+        <curator-bom.version>5.5.0</curator-bom.version>
+        <!--        生态不好, 暂不升3.0+-->
+        <pdfbox.version>2.0.31</pdfbox.version>
+        <itextpdf.version>5.5.13.3</itextpdf.version>
+        <pdf2dom.version>2.0.3</pdf2dom.version>
+        <easypoi-spring-boot-starter.version>4.5.0</easypoi-spring-boot-starter.version>
+        <elastic-job.version>2.1.5</elastic-job.version>
+        <xxl-job-core.version>2.4.0</xxl-job-core.version>
+        <hutool-bom.version>5.8.27</hutool-bom.version>
+        <bom.version>1.0.0-SNAPSHOT</bom.version>
+        <kettle-bom.version>9.4.0.0-338</kettle-bom.version>
+        <docx4j-bom.version>11.4.11</docx4j-bom.version>
+        <tianai-captcha-springboot-starter.version>1.4.1</tianai-captcha-springboot-starter.version>
+        <easy-captcha.version>1.6.2</easy-captcha.version>
+        <oshi-core-java11.version>6.5.0</oshi-core-java11.version>
+        <jproc.version>2.8.2</jproc.version>
+        <druid.version>1.2.22</druid.version>
+        <minio.version>8.5.7</minio.version>
+        <sms-core.version>2.1.13.5</sms-core.version>
+        <bcpkix-jdk18on.version>1.77</bcpkix-jdk18on.version>
+        <sevenzipjbinding.version>16.02-2.01</sevenzipjbinding.version>
+        <sevenzipjbinding-all-platforms.version>16.02-2.01-venus</sevenzipjbinding-all-platforms.version>
+        <commons-io.version>2.15.1</commons-io.version>
+        <commons-text.version>1.11.0</commons-text.version>
+        <bcprov-jdk18on.version>1.77</bcprov-jdk18on.version>
+        <commons-compress.version>1.26.1</commons-compress.version>
+        <commons-csv.version>1.10.0</commons-csv.version>
+        <commons-vfs2.version>2.9.0</commons-vfs2.version>
+        <jsch.version>0.2.17</jsch.version>
+        <thumbnailator.version>0.4.20</thumbnailator.version>
+        <dom4j.version>2.1.4</dom4j.version>
+        <kryo.version>5.6.0</kryo.version>
+        <opencsv.version>5.9</opencsv.version>
+        <nashorn-core.version>15.4</nashorn-core.version>
+        <reflections.version>0.10.2</reflections.version>
+        <syslog4j.version>0.9.61</syslog4j.version>
+        <!--        <jsqlparser.version>4.7</jsqlparser.version> 4.7的API变化较大，需等MybatisPlus依赖升级到4.7才能升级jsqlparser-->
+        <jsqlparser.version>4.9</jsqlparser.version>
+        <protostuff.version>1.8.0</protostuff.version>
+        <ahocorasick.version>0.6.3</ahocorasick.version>
+        <jasypt-spring-boot-starter.version>3.0.5</jasypt-spring-boot-starter.version>
+        <mybatis-plus-join.version>1.4.12</mybatis-plus-join.version>
+        <javassit.version>3.30.2-GA</javassit.version>
+        <jctools-core.version>4.0.2</jctools-core.version>
+        <transmittable-thread-local.version>4.0.1</transmittable-thread-local.version>
+
+        <assertj-assertions-generator-maven-plugin.version>2.2.0</assertj-assertions-generator-maven-plugin.version>
+        <antlr4-maven-plugin.version>4.13.1</antlr4-maven-plugin.version>
+        <spring-boot-maven-plugin.version>3.2.0</spring-boot-maven-plugin.version>
+        <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
+        <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
+        <spring-cloud-alibaba-dependencies.version>2022.0.0.0</spring-cloud-alibaba-dependencies.version>
+        <spring-cloud-dependencies.version>2023.0.0</spring-cloud-dependencies.version>
+        <activemq.version>6.1.0</activemq.version>
+        <mapdb.version>3.1.0</mapdb.version>
+        <jfreechart.version>1.5.4</jfreechart.version>
+        <nacos-client.version>2.3.1</nacos-client.version>
+        <spring-boot-admin.version>3.2.3</spring-boot-admin.version>
+        <opentelemetry-instrumentation-bom.version>1.32.0</opentelemetry-instrumentation-bom.version>
+        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
+        <jotpverify.version>2.0</jotpverify.version>
+        <opentelemetry-logback-mdc-1.0.version>1.32.0-alpha</opentelemetry-logback-mdc-1.0.version>
+
+        <!--        依赖版本管理 END-->
+
+
+        <!--        版本缺陷调整 START-->
+
+        <!--        1.33版本缺陷, 无向下的兼容版本-->
+        <!--        https://devhub.checkmarx.com/cve-details/CVE-2022-41854/-->
+        <!--        https://devhub.checkmarx.com/cve-details/CVE-2022-1471/-->
+        <snakeyaml.version>2.2</snakeyaml.version>
+        <jna.version>5.14.0</jna.version>
+
+        <!--        版本缺陷调整 END-->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--            包括starter, plus-core, plus-annotation, plus-extension,
+            mybatis本体-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.mybatis</groupId>
+                        <artifactId>mybatis-spring</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter-test</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--   mybatis-plus-boot-starter的mybatis-spring是2.1.1，不支持springboot3.2.0，临时解决办法，等mybatisplus升级后还原 -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-core</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--            mybatis-plus增强，join工具，功能待验证 -->
+            <dependency>
+                <groupId>com.github.yulichang</groupId>
+                <artifactId>mybatis-plus-join</artifactId>
+                <version>${mybatis-plus-join.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.yulichang</groupId>
+                <artifactId>mybatis-plus-join-extension</artifactId>
+                <version>${mybatis-plus-join.version}</version>
+            </dependency>
+
+            <!--            工具箱, 类似的工具箱还有apache commons, hutool -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!--            封装java.lang.reflect 和 java.beans-->
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+
+            <!--            处理中文拼音需求, 还能配置外挂词库, 2006-06-21最后一次更新-->
+            <dependency>
+                <groupId>com.belerweb</groupId>
+                <artifactId>pinyin4j</artifactId>
+                <version>${pinyin4j.version}</version>
+            </dependency>
+
+            <!--
+            提供了一套用于网络编程的Java类。包括了很多用于处理网络协议（例如FTP、SMTP、Telnet等）的类和接口，方便地在Java应用程序中实现网络交互和协议处理。-->
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net.version}</version>
+            </dependency>
+
+            <!--            词法, 语法, 语义. 写编译器和解释器用得到-->
+            <!--            formal grammar: https://github.com/antlr/grammars-v4 -->
+            <dependency>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4</artifactId>
+                <version>${antlr4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-runtime</artifactId>
+                <version>${antlr4.version}</version>
+            </dependency>
+            <!--            基于antlr4实现的HTML解析器-->
+            <dependency>
+                <groupId>cn.wanghaomiao</groupId>
+                <artifactId>JsoupXpath</artifactId>
+                <version>${JsoupXpath.version}</version>
+            </dependency>
+
+            <!--            猜content-type(mime-type)-->
+            <dependency>
+                <groupId>com.j256.simplemagic</groupId>
+                <artifactId>simplemagic</artifactId>
+                <version>${simplemagic.version}</version>
+            </dependency>
+
+            <!--            猜charset, 2003年的包-->
+            <dependency>
+                <groupId>net.sourceforge.jchardet</groupId>
+                <artifactId>jchardet</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+
+            <!--            文档工具箱 START-->
+            <!--        poi库更倾向于处理旧版Microsoft Office文件(Microsoft的OLE2文件格式), 如.xls, .doc
+            文件-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!--        poi-ooxml库用于处理新版的Office文件, 即Office Open XML (OOXML)
+            格式文件的支持，如.xlsx, .docx, 和 .pptx 文件-->
+            <!--        ooxml transitive dep on poi-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi-ooxml.version}</version>
+            </dependency>
+            <!--            依赖于poi的 docx 模板生成-->
+            <dependency>
+                <groupId>com.deepoove</groupId>
+                <artifactId>poi-tl</artifactId>
+                <version>${poi-tl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-scratchpad</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!--            基于poi, 处理了某些极端情况下的内存问题, 提供了处理excel的比较直接的封装 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <!--            docx易用性, 比poi更加友好易用-->
+            <dependency>
+                <groupId>org.docx4j</groupId>
+                <artifactId>docx4j</artifactId>
+                <version>${docx4j-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.docx4j</groupId>
+                <artifactId>docx4j-JAXB-ReferenceImpl</artifactId>
+                <version>${docx4j-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.docx4j</groupId>
+                <artifactId>docx4j-export-fo</artifactId>
+                <version>${docx4j-bom.version}</version>
+            </dependency>
+            <!--            又一款封装poi的库, 内部依赖hutool, 升级时注意下-->
+            <!--            提供了便捷的导入导出操作, 模板文件和简单的注解-->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-spring-boot-starter</artifactId>
+                <version>${easypoi-spring-boot-starter.version}</version>
+            </dependency>
+            <!--            pdf工具链 -->
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>pdfbox-tools</artifactId>
+                <version>${pdfbox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>pdfbox</artifactId>
+                <version>${pdfbox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itextpdf</artifactId>
+                <version>${itextpdf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.cssbox</groupId>
+                <artifactId>pdf2dom</artifactId>
+                <version>${pdf2dom.version}</version>
+            </dependency>
+            <!--            文档工具箱 END-->
+
+
+            <!--            简化与zip文件/流操作，提供zip加密特性，轻松创建、提取、更新和删除zip文件中的条目-->
+            <dependency>
+                <groupId>net.lingala.zip4j</groupId>
+                <artifactId>zip4j</artifactId>
+                <version>${zip4j.version}</version>
+            </dependency>
+
+            <!--            处理IP地址和子网，支持IPv4和IPv6。方便地在Java环境中操作和管理IP地址及相关的网络子网。-->
+            <dependency>
+                <groupId>com.github.seancfoley</groupId>
+                <artifactId>ipaddress</artifactId>
+                <version>${ipaddress.version}</version>
+            </dependency>
+
+            <!--            两款对象隐射工具-->
+            <!--            用于生成类型安全的bean映射器。帮助开发者在不同的Java
+            Bean之间进行数据映射，简化代码并提高代码质量。生成映射代码，而无需手动编写繁琐的映射逻辑，从而提高开发效率。-->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <!--            bean映射工具, 与mapstruct不同的是此工具依赖反射, 映射函数可极其灵活
+            正是因为灵活, 极其容易"想当然", 多在测试工程中使用 -->
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>${modelmapper.version}</version>
+            </dependency>
+
+
+            <!--            多数据源支持-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>${dynamic-datasource-spring-boot3-starter.version}</version>
+            </dependency>
+
+            <!--            任务调度框架, quartz(springboot 3自带), elastic-job, xxl-job -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dangdang</groupId>
+                <artifactId>elastic-job</artifactId>
+                <version>${elastic-job.version}</version>
+            </dependency>
+
+            <!--            fix: 引用后似乎没有引入所有的工具-->
+            <!--            <dependency>-->
+            <!--                <groupId>cn.hutool</groupId>-->
+            <!--                <artifactId>hutool-all</artifactId>-->
+            <!--                <version>${hutool-bom.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--            从各种数据源中提取, 转换, 加载数据到单一的数仓中-->
+            <dependency>
+                <groupId>pentaho-kettle</groupId>
+                <artifactId>kettle-core</artifactId>
+                <version>${kettle-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>pentaho-kettle</groupId>
+                <artifactId>kettle-engine</artifactId>
+                <version>${kettle-bom.version}</version>
+            </dependency>
+
+            <!--            jedis, lettuce的替代, 功能对比参考以下链接:-->
+            <!--            https://redisson.org/feature-comparison-redisson-vs-jedis.html -->
+            <!--
+            https://redisson.org/feature-comparison-redisson-vs-lettuce.html -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-spring-boot-starter.version}</version>
+            </dependency>
+
+            <!--            JWT支持-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <!--            从文档中抓取元数据和结构化数据 -->
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-bom</artifactId>
+                <version>${tika.version}</version>
+            </dependency>
+
+            <!--            7-Zip 压缩和解压缩的java binding-->
+            <dependency>
+                <groupId>net.sf.sevenzipjbinding</groupId>
+                <artifactId>sevenzipjbinding</artifactId>
+                <version>${sevenzipjbinding.version}</version>
+            </dependency>
+            <!--            7-Zip 压缩和解压缩的本地库, 包被我们特殊处理过, 增加了arm64的支持 -->
+            <dependency>
+                <groupId>net.sf.sevenzipjbinding</groupId>
+                <artifactId>sevenzipjbinding-all-platforms</artifactId>
+                <version>${sevenzipjbinding-all-platforms.version}</version>
+            </dependency>
+
+            <!--            ssh协议支持, 以及一些上层应用工具/协议 -->
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-core</artifactId>
+                <version>${sshd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-sftp</artifactId>
+                <version>${sshd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-scp</artifactId>
+                <version>${sshd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-putty</artifactId>
+                <version>${sshd.version}</version>
+            </dependency>
+
+            <!--            执行外部命令小工具, 源码很少, 提供了有限的管理input和output, 处理非0返回值-->
+            <dependency>
+                <groupId>org.buildobjects</groupId>
+                <artifactId>jproc</artifactId>
+                <version>${jproc.version}</version>
+            </dependency>
+
+            <!--            跨平台获取系统信息, 包括进程, 内存, 磁盘, 传感器等的信息-->
+            <dependency>
+                <groupId>com.github.oshi</groupId>
+                <artifactId>oshi-core-java11</artifactId>
+                <version>${oshi-core-java11.version}</version>
+            </dependency>
+
+
+            <!--            两款验证码生成器-->
+            <!--            互动形式多样, 除了文字外, 可以做滑块, 点击  -->
+            <dependency>
+                <groupId>cloud.tianai.captcha</groupId>
+                <artifactId>tianai-captcha-springboot-starter</artifactId>
+                <version>${tianai-captcha-springboot-starter.version}</version>
+            </dependency>
+            <!--            文字, 算数-->
+            <dependency>
+                <groupId>com.github.whvcse</groupId>
+                <artifactId>easy-captcha</artifactId>
+                <version>${easy-captcha.version}</version>
+            </dependency>
+
+
+            <!--            数据库连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!--            对象存储-->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <!-- 短信, 支持cmpp协议/smpp协议, sgip协议(联通短信协议), smgp协议(电信短信协议) -->
+            <!-- 依赖了很多工具箱的低版本, 引入后必定造成冲突, 使用的时候需要exclusion -->
+            <dependency>
+                <groupId>com.chinamobile.cmos</groupId>
+                <artifactId>sms-core</artifactId>
+                <version>${sms-core.version}</version>
+            </dependency>
+
+            <!--            Cryptography api-->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk18on</artifactId>
+                <version>${bcpkix-jdk18on.version}</version>
+            </dependency>
+
+            <!--            io, stream, file工具箱-->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+
+            <!--            中间件交互工具 START-->
+            <!--            zookeeper-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-x-discovery</artifactId>
+                <version>${curator-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-x-async</artifactId>
+                <version>${curator-bom.version}</version>
+            </dependency>
+
+            <!--            clickhouse-->
+            <dependency>
+                <groupId>com.clickhouse</groupId>
+                <artifactId>clickhouse-client</artifactId>
+                <version>${clickhouse-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clickhouse</groupId>
+                <artifactId>clickhouse-jdbc</artifactId>
+                <version>${clickhouse-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clickhouse</groupId>
+                <artifactId>clickhouse-r2dbc</artifactId>
+                <version>${clickhouse-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clickhouse</groupId>
+                <artifactId>clickhouse-data</artifactId>
+                <version>${clickhouse-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clickhouse</groupId>
+                <artifactId>clickhouse-grpc-client</artifactId>
+                <version>${clickhouse-bom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.clickhouse</groupId>
+                <artifactId>clickhouse-http-client</artifactId>
+                <version>${clickhouse-bom.version}</version>
+            </dependency>
+            <!--            中间件交互工具 END-->
+
+            <!--            spring-cloud-netflix, openfeign, stream, task, circuitbreaker,
+            config, function, gateway, consul, vault, zookeeper, bus, contract,
+            kubernetes-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--            nacos, seata, sentinel, rocketmq-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-client</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
+            </dependency>
+
+            <!--            工具箱-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>me.luoxiao.transformer</groupId>
+                <artifactId>bom</artifactId>
+                <version>${bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--            TODO: 一句话介绍以下依赖的主要能力-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk18on</artifactId>
+                <version>${bcprov-jdk18on.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>${commons-compress.version}</version>
+            </dependency>
+
+            <!--            <dependency>-->
+            <!--                <groupId>com.fasterxml.jackson.core</groupId>-->
+            <!--                <artifactId>jackson-databind</artifactId>-->
+            <!--                <version>2.15.3</version>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.fasterxml.jackson.datatype</groupId>-->
+            <!--                <artifactId>jackson-datatype-jsr310</artifactId>-->
+            <!--                <version>2.15.3</version>-->
+            <!--            </dependency>-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-csv</artifactId>
+                <version>${commons-csv.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-vfs2</artifactId>
+                <version>${commons-vfs2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.mwiede</groupId>
+                <artifactId>jsch</artifactId>
+                <version>${jsch.version}</version>
+            </dependency>
+
+            <!--            <dependency>-->
+            <!--                <groupId>org.freemarker</groupId>-->
+            <!--                <artifactId>freemarker</artifactId>-->
+            <!--                <version>2.3.32</version>-->
+            <!--            </dependency>-->
+
+            <dependency>
+                <groupId>net.coobird</groupId>
+                <artifactId>thumbnailator</artifactId>
+                <version>${thumbnailator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>kryo</artifactId>
+                <version>${kryo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.opencsv</groupId>
+                <artifactId>opencsv</artifactId>
+                <version>${opencsv.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.nashorn</groupId>
+                <artifactId>nashorn-core</artifactId>
+                <version>${nashorn-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
+            </dependency>
+            <!--            <dependency>-->
+            <!--                <groupId>org.antlr</groupId>-->
+            <!--                <artifactId>ST4</artifactId>-->
+            <!--                <version>4.3.4</version>-->
+            <!--            </dependency>-->
+
+            <dependency>
+                <groupId>org.graylog2</groupId>
+                <artifactId>syslog4j</artifactId>
+                <version>${syslog4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.jsqlparser</groupId>
+                <artifactId>jsqlparser</artifactId>
+                <version>${jsqlparser.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-core</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-runtime</artifactId>
+                <version>${protostuff.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ahocorasick</groupId>
+                <artifactId>ahocorasick</artifactId>
+                <version>${ahocorasick.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>${javassit.version}</version>
+            </dependency>
+            <!-- 一款线程安全的高性能集合框架 -->
+            <dependency>
+                <groupId>org.jctools</groupId>
+                <artifactId>jctools-core</artifactId>
+                <version>${jctools-core.version}</version>
+            </dependency>
+            <!-- 支持线程池的ThreadLocal -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+            <!-- ActiveMQ 升级到 6.1.0 -->
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-broker</artifactId>
+                <version>${activemq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-client</artifactId>
+                <version>${activemq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-pool</artifactId>
+                <version>${activemq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-spring</artifactId>
+                <version>${activemq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-kahadb-store</artifactId>
+                <version>${activemq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-jdbc-store</artifactId>
+                <version>${activemq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-jms-pool</artifactId>
+                <version>${activemq.version}</version>
+            </dependency>
+            <!-- MapDB provides concurrent Maps, Sets and Queues backed by disk storage or off-heap memory. 
+            It is a fast, scalable and easy to use embedded Java database. -->
+            <dependency>
+                <groupId>org.mapdb</groupId>
+                <artifactId>mapdb</artifactId>
+                <version>${mapdb.version}</version>
+            </dependency>
+            <!-- jfreechart基于Java后端图表框架，1.5.4版本支持桑基图（数据流图） -->
+            <dependency>
+                <groupId>org.jfree</groupId>
+                <artifactId>jfreechart</artifactId>
+                <version>${jfreechart.version}</version>
+            </dependency>
+            <!-- Spring Boot 监控框架，Client基于spring-boot-starter-actuator，Server端实时获取监控数据。
+            特点是配置运行简单，但是功能弱于Prometheus+Grafana  -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <!-- 除了io.opentelemetry本身bom外, 还有辅助java编程的遥测方法或注解 -->
+            <dependency>
+                <groupId>io.opentelemetry.instrumentation</groupId>
+                <artifactId>opentelemetry-instrumentation-bom</artifactId>
+                <version>${opentelemetry-instrumentation-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- logback日志增加tracing信息, 属于opentelemetry-instrumentation-bom-alpha, 还没毕业!-->
+            <dependency>
+                <groupId>io.opentelemetry.instrumentation</groupId>
+                <artifactId>opentelemetry-logback-mdc-1.0</artifactId>
+                <version>${opentelemetry-logback-mdc-1.0.version}</version>
+            </dependency>
+            <!-- jna 调用其他语言库，调用效率低，编码便捷，不适合高频调用-->
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna-platform</artifactId>
+                <version>${jna.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>${jna.version}</version>
+            </dependency>
+<!--            otp坚石诚信-->
+            <dependency>
+                <groupId>com.jotpverify</groupId>
+                <artifactId>jotpverify</artifactId>
+                <version>${jotpverify.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+                <configuration>
+
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-dependency-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/application*.yml</include>
+                    <include>**/application*.yaml</include>
+                    <include>**/application*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**/application*.yml</exclude>
+                    <exclude>**/application*.yaml</exclude>
+                    <exclude>**/application*.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
+
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>releases</id>-->
+<!--            <name>Team Nexus Releases Repository</name>-->
+<!--            <url>your repository</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>snapshots</id>-->
+<!--            <url>your repository</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
+
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>nexus</id>-->
+<!--            <name>Team Nexus Repository</name>-->
+<!--            <url>your repository</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>nexus</id>-->
+<!--            <name>Team Nexus Repository</name>-->
+<!--            <url>your repository</url>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
+
+
+</project>
