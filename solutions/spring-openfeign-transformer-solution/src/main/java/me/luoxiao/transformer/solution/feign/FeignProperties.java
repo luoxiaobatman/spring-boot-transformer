@@ -23,4 +23,5 @@ public class FeignProperties {
 
     private Preset presetProperties;
 
+    private boolean rejectAuthorizeHeader = false;
 }

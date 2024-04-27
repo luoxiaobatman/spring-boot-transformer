@@ -12,12 +12,13 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 @SuppressWarnings("RedundantThrows")
 @TestPropertiesLoggingDebug
 class FallbackBlockingLoadBalancerClientTest extends BaseFeignTest {
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private ServiceFoo client;
 
     @Test
     public void givenFeignClientNoServiceInstanceProvide_whenNoFallback_throwException() {
-        assertThatThrownBy(() -> client.fixDelay500ms())
+        assertThatThrownBy(() -> client.getHeaders())
                 .isInstanceOf(NoFallbackAvailableException.class);
     }
 }

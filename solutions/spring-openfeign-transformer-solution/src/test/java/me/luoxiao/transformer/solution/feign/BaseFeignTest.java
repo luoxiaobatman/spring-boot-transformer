@@ -1,8 +1,10 @@
 package me.luoxiao.transformer.solution.feign;
 
 
+import me.luoxiao.transformer.solution.feign.support.EntryController;
 import me.luoxiao.transformer.solution.feign.support.GlobalResponseTransformerExtension;
 import me.luoxiao.transformer.solution.feign.support.ServiceFoo;
+import me.luoxiao.transformer.solution.feign.support.ServiceFooCtl;
 import me.luoxiao.transformer.support.testing.BaseIntegrationTest;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
@@ -14,6 +16,8 @@ import org.springframework.test.context.TestPropertySource;
 @ContextConfiguration(classes = {
         ServiceFoo.class,
         GlobalResponseTransformerExtension.class,
+        EntryController.class,
+        ServiceFooCtl.class,
 })
 @TestPropertySource(properties = {
         FeignProperties.PREFIX + ".enabled=true",
@@ -29,5 +33,10 @@ public class BaseFeignTest extends BaseIntegrationTest {
     @Override
     protected String pathPrefix() {
         return "";
+    }
+
+    protected MockRequestBuilder entry(String intraSVC) {
+        return MULTIPART("/entry")
+                .param("intraSVC", intraSVC);
     }
 }
