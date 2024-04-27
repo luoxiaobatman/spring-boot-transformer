@@ -870,7 +870,7 @@
                 <artifactId>jna</artifactId>
                 <version>${jna.version}</version>
             </dependency>
-<!--            otp坚石诚信-->
+            <!--            otp坚石诚信-->
             <dependency>
                 <groupId>com.jotpverify</groupId>
                 <artifactId>jotpverify</artifactId>
@@ -885,6 +885,13 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <parameters>true</parameters>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
@@ -940,32 +947,32 @@
     </build>
 
 
-<!--    <distributionManagement>-->
-<!--        <repository>-->
-<!--            <id>releases</id>-->
-<!--            <name>Team Nexus Releases Repository</name>-->
-<!--            <url>your repository</url>-->
-<!--        </repository>-->
-<!--        <snapshotRepository>-->
-<!--            <id>snapshots</id>-->
-<!--            <url>your repository</url>-->
-<!--        </snapshotRepository>-->
-<!--    </distributionManagement>-->
+    <!--    <distributionManagement>-->
+    <!--        <repository>-->
+    <!--            <id>releases</id>-->
+    <!--            <name>Team Nexus Releases Repository</name>-->
+    <!--            <url>your repository</url>-->
+    <!--        </repository>-->
+    <!--        <snapshotRepository>-->
+    <!--            <id>snapshots</id>-->
+    <!--            <url>your repository</url>-->
+    <!--        </snapshotRepository>-->
+    <!--    </distributionManagement>-->
 
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <id>nexus</id>-->
-<!--            <name>Team Nexus Repository</name>-->
-<!--            <url>your repository</url>-->
-<!--        </repository>-->
-<!--    </repositories>-->
-<!--    <pluginRepositories>-->
-<!--        <pluginRepository>-->
-<!--            <id>nexus</id>-->
-<!--            <name>Team Nexus Repository</name>-->
-<!--            <url>your repository</url>-->
-<!--        </pluginRepository>-->
-<!--    </pluginRepositories>-->
+    <!--    <repositories>-->
+    <!--        <repository>-->
+    <!--            <id>nexus</id>-->
+    <!--            <name>Team Nexus Repository</name>-->
+    <!--            <url>your repository</url>-->
+    <!--        </repository>-->
+    <!--    </repositories>-->
+    <!--    <pluginRepositories>-->
+    <!--        <pluginRepository>-->
+    <!--            <id>nexus</id>-->
+    <!--            <name>Team Nexus Repository</name>-->
+    <!--            <url>your repository</url>-->
+    <!--        </pluginRepository>-->
+    <!--    </pluginRepositories>-->
 
 
 </project>
