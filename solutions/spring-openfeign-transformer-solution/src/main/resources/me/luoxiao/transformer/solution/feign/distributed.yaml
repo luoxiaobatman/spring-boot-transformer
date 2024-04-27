@@ -1,0 +1,42 @@
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000 # milliseconds
+            readTimeout: 10000 # milliseconds
+            loggerLevel: basic
+      compression:
+        request:
+          enabled: true
+        response:
+          enabled: true
+      circuitbreaker:
+        enabled: true
+      okhttp:
+        enabled: true
+      httpclient:
+        connection-timeout: 5000
+        ok-http:
+          read-timeout: 10000
+          protocols: [HTTP_2, HTTP_1_1]
+        disable-ssl-validation: true
+        follow-redirects: true
+        # max idle connections, related to connection pool
+        max-connections: 200
+        time-to-live-unit: seconds
+        # http 的 keep-alive 头
+        time-to-live: 60
+    loadbalancer:
+      retry:
+        enabled: true
+        retry-on-all-exceptions: true
+        # false only retry GET , true retry all requests
+        retry-on-all-operations: false
+        # on same instance, only retry one time
+        max-retries-on-same-service-instance: 1
+        # the above fail, next service-instance will retry only once
+        max-retries-on-next-service-instance: 1
+        # 429: TOO MANY REQUEST
+        retryable-status-codes: [429]

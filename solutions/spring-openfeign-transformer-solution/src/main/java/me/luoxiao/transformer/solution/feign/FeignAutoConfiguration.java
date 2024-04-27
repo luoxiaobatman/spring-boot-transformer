@@ -2,13 +2,20 @@ package me.luoxiao.transformer.solution.feign;
 
 import me.luoxiao.transformer.nodep.MessageSourceConfigure;
 import me.luoxiao.transformer.solution.feign.lb.FallbackBlockingLoadBalancerClient;
+import me.luoxiao.transformer.solution.feign.properties.Distributed;
+import me.luoxiao.transformer.solution.feign.properties.Localhost;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 
 @EnableConfigurationProperties({
         FeignProperties.class
+})
+@Import({
+        Distributed.class,
+        Localhost.class,
 })
 public class FeignAutoConfiguration implements MessageSourceConfigure {
 

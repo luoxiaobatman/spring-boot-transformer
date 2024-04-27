@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 1000 # milliseconds
+            readTimeout: 10000 # milliseconds
+            loggerLevel: basic
+      compression:
+        request:
+          enabled: false
+        response:
+          enabled: false
+      circuitbreaker:
+        enabled: true
+      okhttp:
+        enabled: true
+      httpclient:
+        connection-timeout: 1000
+        ok-http:
+          read-timeout: 10000
+          protocols: [HTTP_2, HTTP_1_1]
+        disable-ssl-validation: true
+        follow-redirects: true
+        max-connections: 10
+        time-to-live-unit: seconds
+        # http keep-alive
+        time-to-live: 60
+    loadbalancer:
+      retry:
+        enabled: false

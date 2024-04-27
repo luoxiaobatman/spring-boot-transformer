@@ -2,6 +2,7 @@ package me.luoxiao.transformer.solution.feign;
 
 import lombok.Data;
 import me.luoxiao.transformer.solution.feign.lb.Strategy;
+import me.luoxiao.transformer.solution.feign.properties.Preset;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = FeignProperties.PREFIX)
@@ -19,4 +20,7 @@ public class FeignProperties {
      * 0: for auto discovery for same spring context app
      */
     private int serviceInstanceFallbackPort = 0;
+
+    private Preset presetProperties;
+
 }
