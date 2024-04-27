@@ -19,7 +19,7 @@ class AddAuthorizationHeaderRequestInterceptorTest extends BaseFeignTest {
         entry(ServiceFoo.REQUEST_GET_HEADERS)
                 .header(HttpHeaders.AUTHORIZATION, bearerJwtToken)
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$." + HttpHeaders.AUTHORIZATION).value(
+                .andExpect(jsonPath("$.authorization").value(
                         bearerJwtToken
                 ))
                 .andDo(printBody());
