@@ -2,6 +2,7 @@ package me.luoxiao.transformer.solution.feign;
 
 import me.luoxiao.transformer.nodep.MessageSourceConfigure;
 import me.luoxiao.transformer.solution.feign.interceptor.AddAuthorizationHeaderRequestInterceptor;
+import me.luoxiao.transformer.solution.feign.interceptor.AddCookiesRequestInterceptor;
 import me.luoxiao.transformer.solution.feign.lb.FallbackBlockingLoadBalancerClient;
 import me.luoxiao.transformer.solution.feign.properties.Distributed;
 import me.luoxiao.transformer.solution.feign.properties.Localhost;
@@ -36,8 +37,14 @@ public class FeignAutoConfiguration implements MessageSourceConfigure {
     }
 
     @Bean
-    @ConditionalOnProperty(prefix = FeignProperties.PREFIX, name = "reject-authorize-header", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(prefix = FeignProperties.PREFIX, name = "reject-authorize-header", havingValue = "false", matchIfMissing = true)
     public AddAuthorizationHeaderRequestInterceptor addAuthorizationHeaderRequestInterceptor() {
         return new AddAuthorizationHeaderRequestInterceptor();
+    }
+
+    @Bean
+    @ConditionalOnProperty(prefix = FeignProperties.PREFIX, name = "reject-cookies", havingValue = "false", matchIfMissing = true)
+    public AddCookiesRequestInterceptor addCookiesRequestInterceptor() {
+        return new AddCookiesRequestInterceptor();
     }
 }
