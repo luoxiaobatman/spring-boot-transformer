@@ -21,17 +21,16 @@ public class AddCookiesRequestInterceptor implements RequestInterceptor {
         if (attributes != null) {
             Cookie[] requestCookies = attributes.getRequest().getCookies();
             if (requestCookies != null) {
-                for (Cookie cookie : requestCookies) {
-                    Collection<String> cookies = template.headers().get(HttpHeaders.COOKIE);
-                    if (cookies == null) {
-                        cookies = new ArrayList<>();
-                    } else {
-                        cookies = new ArrayList<>(cookies);
-                    }
-                    cookies.add(new HttpCookie(cookie.getName(), cookie.getValue()).toString());
-                    template.header(HttpHeaders.COOKIE, cookies);
-                    return;
+                Collection<String> cookies = template.headers().get(HttpHeaders.COOKIE);
+                if (cookies == null) {
+                    cookies = new ArrayList<>();
+                } else {
+                    cookies = new ArrayList<>(cookies);
                 }
+                for (Cookie cookie : requestCookies) {
+                    cookies.add(new HttpCookie(cookie.getName(), cookie.getValue()).toString());
+                }
+                template.header(HttpHeaders.COOKIE, cookies);
             }
         }
     }

@@ -21,6 +21,7 @@ import org.springframework.test.context.TestPropertySource;
 })
 @TestPropertySource(properties = {
         FeignProperties.PREFIX + ".enabled=true",
+        FeignProperties.PREFIX + ".strategy=custom_server",
 //        "spring.cloud.discovery.client.simple.instances." + ServiceFoo.SERVICE_NAME + "[0].uri=http://127.0.0.1:${wiremock.server.port}",
         "spring.cloud.openfeign.autoconfiguration.jackson.enabled=true",
         "spring.cloud.loadbalancer.retry.enabled=true"

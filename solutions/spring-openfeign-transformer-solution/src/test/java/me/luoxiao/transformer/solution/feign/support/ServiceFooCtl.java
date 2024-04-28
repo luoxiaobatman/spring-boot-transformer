@@ -1,5 +1,6 @@
 package me.luoxiao.transformer.solution.feign.support;
 
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -27,6 +28,14 @@ public class ServiceFooCtl implements ServiceFoo {
 
     @Override
     public Map<String, String> getCookies() {
-        return Map.of("fallback", "fallback");
+        if (RequestContextHolder.getRequestAttributes() instanceof ServletRequestAttributes sra) {
+            Cookie[] cookies = sra.getRequest().getCookies();
+            Map<String, String> map = new HashMap<>();
+            for (Cookie cookie : cookies) {
+                map.put(cookie.getName(), cookie.getValue());
+            }
+            return map;
+        }
+        throw new RuntimeException();
     }
 }
