@@ -17,6 +17,7 @@
     <modules>
         <module>nodep</module>
         <module>nodep-constraint</module>
+        <module>nodep-constraint-validator</module>
     </modules>
 
 <!--    <build>-->
