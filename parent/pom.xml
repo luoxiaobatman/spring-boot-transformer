@@ -18,6 +18,7 @@
 
     <properties>
         <!--        工程参数 START-->
+        <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
         <mybatis-spring.version>3.0.3</mybatis-spring.version>
         <revision>1.0.0-SNAPSHOT</revision>
         <!--        工程参数 END-->
@@ -134,6 +135,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
             <!--            包括starter, plus-core, plus-annotation, plus-extension,
             mybatis本体-->
             <dependency>
@@ -945,8 +951,8 @@
         </resources>
     </build>
 
-<!--    would better use a team nexus if you are a team.-->
-<!--    if you are a one-man-army, you don't need a this.-->
+    <!--    would better use a team nexus if you are a team.-->
+    <!--    if you are a one-man-army, you don't need a this.-->
     <!--    <distributionManagement>-->
     <!--        <repository>-->
     <!--            <id>releases</id>-->
