@@ -41,6 +41,16 @@
                 <artifactId>nodep-constraint-validator</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>me.luoxiao.transformer</groupId>
+                <artifactId>solution-message-broker-agnostic</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>me.luoxiao.transformer</groupId>
+                <artifactId>spring-openfeign-transformer-solution</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

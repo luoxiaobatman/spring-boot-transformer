@@ -16,6 +16,7 @@
 
     <modules>
         <module>spring-openfeign-transformer-solution</module>
+        <module>solution-message-broker-agnostic</module>
     </modules>
 
 <!--    <build>-->
