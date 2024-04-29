@@ -5,20 +5,29 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>me.luoxiao.transformer</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>nodeps</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>nodeps</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>nodep-constraint</artifactId>
+    <packaging>jar</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
-    <modules>
-        <module>nodep</module>
-        <module>nodep-constraint</module>
-    </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
 <!--    <build>-->
 <!--        <plugins>-->
 <!--            <plugin>-->
