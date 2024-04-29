@@ -15,6 +15,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@SuppressWarnings("CodeBlock2Expr")
 @ContextConfiguration(classes = {
         MultipartFileValidatorTest.SimService.class
 })

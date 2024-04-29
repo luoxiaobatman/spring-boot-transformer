@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
  * <p>
  * you can also use annotation {@link Testing}(and every meta annotations inside the save package) approach to do the boilerplate.
  */
+@SuppressWarnings("unused")
 @Testing
 abstract public class BaseTest {
     protected static MockMultipartFile multipartFile() {
