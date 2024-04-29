@@ -47,40 +47,39 @@
         <modelmapper.version>3.2.0</modelmapper.version>
         <pinyin4j.version>2.5.1</pinyin4j.version>
         <dynamic-datasource-spring-boot3-starter.version>4.3.0</dynamic-datasource-spring-boot3-starter.version>
-        <poi-tl.version>1.12.1</poi-tl.version>
-        <redisson-spring-boot-starter.version>3.27.2</redisson-spring-boot-starter.version>
+        <poi-tl.version>1.12.3-beta1</poi-tl.version>
+        <redisson-spring-boot-starter.version>3.29.2</redisson-spring-boot-starter.version>
         <jjwt.version>0.12.5</jjwt.version>
         <JsoupXpath.version>2.5.3</JsoupXpath.version>
-        <tika.version>2.9.1</tika.version>
+        <tika.version>3.0.0-BETA</tika.version>
         <hyperscan.version>5.4.0-2.0.0</hyperscan.version>
         <sshd.version>2.12.1</sshd.version>
         <easyexcel.version>3.3.4</easyexcel.version>
-        <clickhouse-bom.version>0.5.0</clickhouse-bom.version>
-        <curator-bom.version>5.5.0</curator-bom.version>
-        <!--        生态不好, 暂不升3.0+-->
-        <pdfbox.version>2.0.31</pdfbox.version>
+        <clickhouse-bom.version>0.6.0-patch4</clickhouse-bom.version>
+        <curator-bom.version>5.6.0</curator-bom.version>
+        <pdfbox.version>3.0.2</pdfbox.version>
         <itextpdf.version>5.5.13.3</itextpdf.version>
         <pdf2dom.version>2.0.3</pdf2dom.version>
         <easypoi-spring-boot-starter.version>4.5.0</easypoi-spring-boot-starter.version>
         <elastic-job.version>2.1.5</elastic-job.version>
-        <xxl-job-core.version>2.4.0</xxl-job-core.version>
+        <xxl-job-core.version>2.4.1</xxl-job-core.version>
         <hutool-bom.version>5.8.27</hutool-bom.version>
         <bom.version>1.0.0-SNAPSHOT</bom.version>
         <kettle-bom.version>9.4.0.0-338</kettle-bom.version>
         <docx4j-bom.version>11.4.11</docx4j-bom.version>
         <tianai-captcha-springboot-starter.version>1.4.1</tianai-captcha-springboot-starter.version>
         <easy-captcha.version>1.6.2</easy-captcha.version>
-        <oshi-core-java11.version>6.5.0</oshi-core-java11.version>
+        <oshi-core-java11.version>6.6.0</oshi-core-java11.version>
         <jproc.version>2.8.2</jproc.version>
         <druid.version>1.2.22</druid.version>
-        <minio.version>8.5.7</minio.version>
+        <minio.version>8.5.10</minio.version>
         <sms-core.version>2.1.13.5</sms-core.version>
-        <bcpkix-jdk18on.version>1.77</bcpkix-jdk18on.version>
+        <bcpkix-jdk18on.version>1.78.1</bcpkix-jdk18on.version>
+        <bcprov-jdk18on.version>1.78.1</bcprov-jdk18on.version>
         <sevenzipjbinding.version>16.02-2.01</sevenzipjbinding.version>
         <sevenzipjbinding-all-platforms.version>16.02-2.01-venus</sevenzipjbinding-all-platforms.version>
-        <commons-io.version>2.15.1</commons-io.version>
-        <commons-text.version>1.11.0</commons-text.version>
-        <bcprov-jdk18on.version>1.77</bcprov-jdk18on.version>
+        <commons-io.version>2.16.1</commons-io.version>
+        <commons-text.version>1.12.0</commons-text.version>
         <commons-compress.version>1.26.1</commons-compress.version>
         <commons-csv.version>1.10.0</commons-csv.version>
         <commons-vfs2.version>2.9.0</commons-vfs2.version>
@@ -99,7 +98,7 @@
         <jasypt-spring-boot-starter.version>3.0.5</jasypt-spring-boot-starter.version>
         <mybatis-plus-join.version>1.4.12</mybatis-plus-join.version>
         <javassit.version>3.30.2-GA</javassit.version>
-        <jctools-core.version>4.0.2</jctools-core.version>
+        <jctools-core.version>4.0.3</jctools-core.version>
         <transmittable-thread-local.version>4.0.1</transmittable-thread-local.version>
 
         <assertj-assertions-generator-maven-plugin.version>2.2.0</assertj-assertions-generator-maven-plugin.version>
@@ -107,17 +106,17 @@
         <spring-boot-maven-plugin.version>3.2.0</spring-boot-maven-plugin.version>
         <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
         <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
-        <spring-cloud-alibaba-dependencies.version>2022.0.0.0</spring-cloud-alibaba-dependencies.version>
-        <spring-cloud-dependencies.version>2023.0.0</spring-cloud-dependencies.version>
-        <activemq.version>6.1.0</activemq.version>
+        <spring-cloud-alibaba-dependencies.version>2023.0.1.0</spring-cloud-alibaba-dependencies.version>
+        <spring-cloud-dependencies.version>2023.0.1</spring-cloud-dependencies.version>
+        <activemq.version>6.1.2</activemq.version>
         <mapdb.version>3.1.0</mapdb.version>
         <jfreechart.version>1.5.4</jfreechart.version>
-        <nacos-client.version>2.3.1</nacos-client.version>
+        <nacos-client.version>2.3.2</nacos-client.version>
         <spring-boot-admin.version>3.2.3</spring-boot-admin.version>
-        <opentelemetry-instrumentation-bom.version>1.32.0</opentelemetry-instrumentation-bom.version>
-        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
+        <opentelemetry-instrumentation-bom.version>2.3.0</opentelemetry-instrumentation-bom.version>
+        <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <jotpverify.version>2.0</jotpverify.version>
-        <opentelemetry-logback-mdc-1.0.version>1.32.0-alpha</opentelemetry-logback-mdc-1.0.version>
+        <opentelemetry-logback-mdc-1.0.version>2.3.0-alpha</opentelemetry-logback-mdc-1.0.version>
 
         <!--        依赖版本管理 END-->
 
@@ -946,7 +945,8 @@
         </resources>
     </build>
 
-
+<!--    would better use a team nexus if you are a team.-->
+<!--    if you are a one-man-army, you don't need a this.-->
     <!--    <distributionManagement>-->
     <!--        <repository>-->
     <!--            <id>releases</id>-->
