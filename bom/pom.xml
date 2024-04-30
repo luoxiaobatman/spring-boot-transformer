@@ -51,6 +51,11 @@
                 <artifactId>spring-openfeign-transformer-solution</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>me.luoxiao.transformer</groupId>
+                <artifactId>solution-telemetry-small-biz-pre-config</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
