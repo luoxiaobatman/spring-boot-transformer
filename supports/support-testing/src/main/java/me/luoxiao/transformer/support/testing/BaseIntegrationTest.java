@@ -9,6 +9,7 @@ import jakarta.servlet.http.Cookie;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import me.luoxiao.transformer.support.testing.helpers.Resources;
+import me.luoxiao.transformer.support.testing.helpers.SupportIntegrationTestMain;
 import org.awaitility.Awaitility;
 import org.hamcrest.Matchers;
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +22,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.*;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMultipartHttpServletRequestBuilder;
@@ -58,11 +60,13 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @SuppressWarnings({"unused", "SameParameterValue"})
 @SpringBootTest(
-        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+        classes = SupportIntegrationTestMain.class
 )
 @AutoConfigureWebMvc
 @AutoConfigureMockMvc
 @Slf4j
+@ContextConfiguration(classes = SupportIntegrationTestMain.class)
 public abstract class BaseIntegrationTest extends BaseTest {
     @Autowired
     protected MockMvc mvc;
