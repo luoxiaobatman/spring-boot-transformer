@@ -39,7 +39,6 @@ import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
@@ -57,7 +56,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * {@link me.luoxiao.transformer.support.testing.BaseIntegrationTest#pathPrefix} is what you must override to provide handler path prefix.
  *
  */
-@SuppressWarnings({"SpringJavaInjectionPointsAutowiringInspection", "unused", "SameParameterValue"})
+@SuppressWarnings({"unused", "SameParameterValue"})
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
@@ -319,7 +318,7 @@ public abstract class BaseIntegrationTest extends BaseTest {
         return DELETE("");
     }
 
-    @SuppressWarnings("UnusedReturnValue")
+    @SuppressWarnings({"UnusedReturnValue", "RedundantThrows"})
     public class MockRequestBuilder implements ResultActions {
         private final MockHttpServletRequestBuilder requestBuilder;
         private boolean isContentTypeExplicitlySet = false;
@@ -369,7 +368,7 @@ public abstract class BaseIntegrationTest extends BaseTest {
 
         public MockRequestBuilder params(Object object) throws Exception {
             MultiValueMap<String, String> mvm = new LinkedMultiValueMap<>();
-            mvm.setAll(getObjectMapper().convertValue(object, new TypeReference<Map<String, String>>() {
+            mvm.setAll(getObjectMapper().convertValue(object, new TypeReference<>() {
             }));
             requestBuilder.params(mvm);
             if (requestBuilder instanceof MockMultipartHttpServletRequestBuilder mb) {
@@ -483,7 +482,9 @@ public abstract class BaseIntegrationTest extends BaseTest {
         }
     }
 
-    abstract protected String pathPrefix();
+    protected String pathPrefix() {
+        return "";
+    }
 
     protected ObjectMapper getObjectMapper() {
         return mvcParamObjectMapper;
