@@ -3,6 +3,7 @@ package me.luoxiao.transformer.solution.feign;
 import me.luoxiao.transformer.nodep.MessageSourceConfigure;
 import me.luoxiao.transformer.solution.feign.interceptor.AddAuthorizationHeaderRequestInterceptor;
 import me.luoxiao.transformer.solution.feign.interceptor.AddCookiesRequestInterceptor;
+import me.luoxiao.transformer.solution.feign.interceptor.TelemetryRequestInterceptor;
 import me.luoxiao.transformer.solution.feign.lb.FallbackBlockingLoadBalancerClient;
 import me.luoxiao.transformer.solution.feign.properties.Distributed;
 import me.luoxiao.transformer.solution.feign.properties.Localhost;
@@ -46,5 +47,11 @@ public class FeignAutoConfiguration implements MessageSourceConfigure {
     @ConditionalOnProperty(prefix = FeignProperties.PREFIX, name = "reject-cookies", havingValue = "false", matchIfMissing = true)
     public AddCookiesRequestInterceptor addCookiesRequestInterceptor() {
         return new AddCookiesRequestInterceptor();
+    }
+
+    @Bean
+    @ConditionalOnProperty(prefix = FeignProperties.PREFIX, name = "reject-telemetry", havingValue = "false", matchIfMissing = true)
+    public TelemetryRequestInterceptor telemetryRequestInterceptor() {
+        return new TelemetryRequestInterceptor();
     }
 }

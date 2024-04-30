@@ -9,7 +9,7 @@ import io.opentelemetry.context.propagation.TextMapSetter;
 /**
  * feign support for telemetry
  */
-public class IdpTelemetryTraceparentRequestInterceptor implements RequestInterceptor {
+public class TelemetryRequestInterceptor implements RequestInterceptor {
     private static final TextMapSetter<RequestTemplate> requestTemplateTraceSetter = (carrier, key, value) -> {
         assert carrier != null;
         carrier.header(key, value);

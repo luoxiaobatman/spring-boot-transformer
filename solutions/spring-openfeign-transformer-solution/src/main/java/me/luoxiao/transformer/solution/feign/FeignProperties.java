@@ -25,4 +25,5 @@ public class FeignProperties {
 
     private boolean rejectAuthorizeHeader = false;
     private boolean rejectCookies = false;
+    private boolean rejectTelemetry = false;
 }
